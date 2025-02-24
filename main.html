@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payooo Mobile Bank with DOM</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-800">
+    <section class="max-w-md min-h-screen mx-auto bg-gray-200">
+      <nav class="flex justify-between items-center mx-5">
+        <div class="flex p-2">
+          <img class="w-12" src="./assets/Group.png" alt="" />
+          <div class="ml-2">
+            <h3 class="text-xl font-bold">
+              $ <span id="main-balance">45000</span>
+            </h3>
+            <p>Available Balance</p>
+          </div>
+        </div>
+        <div>
+          <button
+            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-lg px-4 py-1"
+            type="button"
+          >
+            Log Out
+          </button>
+        </div>
+      </nav>
+      <div class="m-2">
+        <h3 class="text-2xl font-bold my-2">🔥 Welcome to Payooo!</h3>
+        <p>
+          Enjoy easy and convenient financial services with us. Cashout charge
+          is low and
+        </p>
+      </div>
+      <div>
+        <div class="cards grid grid-cols-3 gap-2 p-2">
+          <div
+            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
+          >
+            <div class="p-5">
+              <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="" />
+              <p>Add Money</p>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
+          >
+            <div class="p-5">
+              <img class="w-8 mx-auto" src="./assets/send1.png" alt="" />
+              <p>Cashout</p>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
+          >
+            <div class="p-5">
+              <img class="w-8 mx-auto" src="./assets/transaction1.png" alt="" />
+              <p>Transactions</p>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
+          >
+            <div class="p-5">
+              <img class="w-8 mx-auto" src="./assets/money1.png" alt="" />
+              <p>TransferMoney</p>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
+          >
+            <div class="p-5">
+              <img class="w-8 mx-auto" src="./assets/bonus1.png" alt="" />
+              <p>Get Bonus</p>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
+          >
+            <div class="p-5">
+              <img class="w-8 mx-auto" src="./assets/purse1.png" alt="" />
+              <p>pay Bill</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main>
+        <div class="hero bg-base-200">
+          <div class="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
+            <form class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Account Number</span>
+                </label>
+                <input
+                  id="account-number"
+                  type="text"
+                  placeholder="Enter Your  Account Number"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Amount</span>
+                </label>
+                <input
+                  id="add-amount"
+                  type="text"
+                  placeholder="Enter Your Amount"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">4 Digit Pin</span>
+                </label>
+                <input
+                  id="user-pin"
+                  type="text"
+                  placeholder="Enter 4 Digit Pin"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control mt-6">
+                <button id="add-money-btn" class="btn btn-primary">
+                  Add Money
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </section>
+    <script src="./js/addmoney.js"></script>
+  </body>
+</html>
