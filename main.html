@@ -25,6 +25,7 @@
         </div>
         <div>
           <button
+            id="logout-btn"
             class="bg-white border border-[rgba(8,8,8,0.1)] rounded-lg px-4 py-1"
             type="button"
           >
@@ -42,7 +43,8 @@
       <div>
         <div class="cards grid grid-cols-3 gap-2 p-2">
           <div
-            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
+            id="add-money-box"
+            class="bg-white border cursor-pointer border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
           >
             <div class="p-5">
               <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="" />
@@ -50,7 +52,8 @@
             </div>
           </div>
           <div
-            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
+            id="cashout-box"
+            class="bg-white border cursor-pointer border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
           >
             <div class="p-5">
               <img class="w-8 mx-auto" src="./assets/send1.png" alt="" />
@@ -58,7 +61,8 @@
             </div>
           </div>
           <div
-            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
+            id="transaction-box"
+            class="bg-white border cursor-pointer border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
           >
             <div class="p-5">
               <img class="w-8 mx-auto" src="./assets/transaction1.png" alt="" />
@@ -66,7 +70,8 @@
             </div>
           </div>
           <div
-            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
+            id="transter-box"
+            class="bg-white border cursor-pointer border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
           >
             <div class="p-5">
               <img class="w-8 mx-auto" src="./assets/money1.png" alt="" />
@@ -74,7 +79,8 @@
             </div>
           </div>
           <div
-            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
+            id="bonus-box"
+            class="bg-white border cursor-pointer border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
           >
             <div class="p-5">
               <img class="w-8 mx-auto" src="./assets/bonus1.png" alt="" />
@@ -82,7 +88,8 @@
             </div>
           </div>
           <div
-            class="bg-white border border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
+            id="paybill-box"
+            class="bg-white border cursor-pointer border-[rgba(8,8,8,0.1)] rounded-[12px] flex justify-center items-center"
           >
             <div class="p-5">
               <img class="w-8 mx-auto" src="./assets/purse1.png" alt="" />
@@ -92,9 +99,23 @@
         </div>
       </div>
       <main>
-        <div class="hero bg-base-200">
+        <!-- Add Money -->
+        <div id="add-money" class="hero bg-base-200">
           <div class="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
+            <h2 class="text-xl font-bold mt-5 ml-3.5">Add Money</h2>
             <form class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Select Bank</span>
+                </label>
+                <select id="allbank" class="select select-bordered">
+                  <option disabled selected>Select bank</option>
+                  <option value="Bkash">Bkash</option>
+                  <option value="Nagad">nagad</option>
+                  <option value="dbbl">DBBL</option>
+                </select>
+              </div>
+
               <div class="form-control">
                 <label class="label">
                   <span class="label-text">Account Number</span>
@@ -139,8 +160,204 @@
             </form>
           </div>
         </div>
+        <!-- Cash Out -->
+        <div id="cashout" class="hero bg-base-200">
+          <div class="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
+            <h2 class="text-xl font-bold mt-5 ml-3.5">Cash Out</h2>
+            <form class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Agent Number</span>
+                </label>
+                <input
+                  id="agent-account-number"
+                  type="text"
+                  placeholder="Enter Agent  Account Number"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Amount</span>
+                </label>
+                <input
+                  id="cashout-amount"
+                  type="text"
+                  placeholder="Enter Your Amount"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">4 Digit Pin</span>
+                </label>
+                <input
+                  id="chashout-pin"
+                  type="text"
+                  placeholder="Enter 4 Digit Pin"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control mt-6">
+                <button id="cashout-btn" class="btn btn-primary">
+                  Withdraw Money
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Transfer Money -->
+        <div id="transfer-money" class="hero bg-base-200">
+          <div class="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
+            <h2 class="text-xl font-bold mt-5 ml-3.5">Transfer Money</h2>
+            <form class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">User Account Number</span>
+                </label>
+                <input
+                  id="account-number"
+                  type="text"
+                  placeholder="User Account Number"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Amount</span>
+                </label>
+                <input
+                  id="add-amount"
+                  type="text"
+                  placeholder="Enter Your Amount"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">4 Digit Pin</span>
+                </label>
+                <input
+                  id="user-pin"
+                  type="text"
+                  placeholder="Enter 4 Digit Pin"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control mt-6">
+                <button id="add-money-btn" class="btn btn-primary">
+                  Send Now
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Get Bonus  -->
+        <div id="get-bonus" class="hero bg-base-200">
+          <div class="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
+            <h2 class="text-xl font-bold mt-5 ml-3.5">Get Bonus</h2>
+            <form class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Enter Your Coupon</span>
+                </label>
+                <input
+                  id="account-number"
+                  type="text"
+                  placeholder="Enter Your Coupon"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control mt-6">
+                <button id="add-money-btn" class="btn btn-primary">
+                  Get Bonus
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Pay Bill -->
+        <div id="pay-bill" class="hero bg-base-200">
+          <div class="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
+            <h2 class="text-xl font-bold mt-5 ml-3.5">Pay Bill</h2>
+            <form class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Select Bank</span>
+                </label>
+                <select id="allbank" class="select select-bordered">
+                  <option disabled selected>Select bank</option>
+                  <option value="Bkash">Bkash</option>
+                  <option value="Nagad">nagad</option>
+                  <option value="dbbl">DBBL</option>
+                </select>
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Biller Account Number</span>
+                </label>
+                <input
+                  id="account-number"
+                  type="text"
+                  placeholder="Enter Account Number"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">Amount to Pay</span>
+                </label>
+                <input
+                  id="add-amount"
+                  type="text"
+                  placeholder="Enter Your Amount"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text">4 Digit Pin</span>
+                </label>
+                <input
+                  id="user-pin"
+                  type="text"
+                  placeholder="Enter 4 Digit Pin"
+                  class="input input-bordered"
+                  required
+                />
+              </div>
+              <div class="form-control mt-6">
+                <button id="add-money-btn" class="btn btn-primary">
+                  Pay Now
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Transaction History -->
+        <div id="transaction-history" class="hero bg-base-200">
+          <div
+            id="transection-container"
+            class="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl"
+          >
+            <h2 class="text-xl font-bold mt-5 ml-3.5">Transaction History</h2>
+          </div>
+        </div>
       </main>
     </section>
     <script src="./js/addmoney.js"></script>
+    <script src="./utilities/togglle.js"></script>
+    <script src="./utilities/utilities.js"></script>
+    <script src="./js/cashout.js"></script>
+    <script src="./js/logout.js"></script>
   </body>
 </html>
